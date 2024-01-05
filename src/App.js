@@ -133,6 +133,9 @@ const [numbers, setNumbers] = React.useState([
 
   return (
     <main>
+      <h1 className="title">Tenzies</h1>
+            <p className="instructions">Roll until all dice are the same. 
+            Click each die to freeze it at its current value between rolls.</p>
       <div className='dice-container'>
         {numbers.map((number, index) => (
           <Die
@@ -143,12 +146,13 @@ const [numbers, setNumbers] = React.useState([
             handleCheck={handleChange}
           />
         ))}
-        <button onClick={handle_reset}>
+      </div>
+
+        <button className="roll-dice" onClick={handle_reset}>
           {
             win ? "Play again" : "Mix"
           }
         </button>
-      </div>
     </main>
   );
 }
